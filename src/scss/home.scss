@@ -1,0 +1,101 @@
+//====================================================================================================
+
+.hero {
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__body {
+    position: relative;
+    border-radius: 30px;
+    background: #fff;
+
+    @media (max-width: $mobile) {
+      min-height: toRem(470);
+    }
+  }
+
+  &__title {
+    color: #011242;
+    @include adaptiveValue("font-size", 100, 40);
+    font-weight: 600;
+    line-height: 100%; /* 100px */
+
+    max-width: toRem(770);
+    // margin-bottom: toRem(30);
+  }
+
+  &__text {
+    max-width: toRem(770);
+
+    @include adaptiveValue("font-size", 24, 20);
+    font-weight: 400;
+    line-height: 130%; /* 31.2px */
+
+    margin-bottom: toRem(30);
+  }
+
+  &__button {
+    margin-top: auto;
+    width: max-content;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: toRem(30);
+
+    @include adaptiveValue("padding-top", 80, 50, 0, 1530, 991);
+    @include adaptiveValue("padding-bottom", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-left", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-right", 50, 15, 0, 1530, 767);
+
+    min-height: toRem(600);
+  }
+
+  &__sliders {
+    pointer-events: none;
+    background: #fff;
+    display: flex;
+    gap: toRem(10);
+
+    position: absolute;
+    width: percent(470, 1500);
+    height: 100%;
+    top: 0;
+    @include adaptiveValue("right", 50, 15, 0, 1530, 767);
+    z-index: 1;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__slider {
+    width: calc(33% - 3.5px);
+  }
+
+  &__wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+
+  &__slide {
+    background: rgba(94, 125, 219, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+//====================================================================================================
