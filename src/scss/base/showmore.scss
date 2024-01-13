@@ -3,15 +3,57 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
-	span {
-		&:last-child {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
-				display: block;
-			}
-		}
-	}
+  span {
+    &:last-child {
+      display: none;
+    }
+    ._showmore-active & {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+.readmore {
+  &__content {
+    p {
+      @include adaptiveValue("font-size", 24, 16);
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
+  }
+
+  &__more {
+    margin-top: auto;
+    width: max-content;
+    font-family: "Inter Tight";
+    @include adaptiveValue("font-size", 24, 16);
+    font-weight: 400;
+    line-height: 130%; /* 31.2px */
+    position: relative;
+
+    @include adaptiveValue("margin-top", 20, 15);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #2652cf;
+        &::after {
+          background-color: #2652cf;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: toRem(1);
+      bottom: 0;
+      left: 0;
+      background-color: #011242;
+    }
+  }
 }

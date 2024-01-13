@@ -1,0 +1,283 @@
+.service-hero {
+  @include adaptiveValue("padding-bottom", 80, 40);
+  padding-top: toRem(20);
+  &__container {
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    position: relative;
+    border-radius: 30px;
+
+    overflow: hidden;
+  }
+
+  &__image-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    @include adaptiveValue("padding-top", 80, 50, 0, 1530, 991);
+    @include adaptiveValue("padding-bottom", 55, 45, 0, 1530, 767);
+    @include adaptiveValue("padding-left", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-right", 50, 15, 0, 1530, 767);
+
+    min-height: toRem(600);
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile) {
+      min-height: toRem(470);
+    }
+  }
+
+  &__title {
+    color: #fff;
+    @include adaptiveValue("font-size", 100, 30);
+    font-weight: 600;
+    line-height: 100%; /* 100px */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__text {
+    color: #fff;
+    font-family: "Inter Tight";
+    @include adaptiveValue("font-size", 24, 20);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 31.2px */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+
+  &__button {
+    width: fit-content;
+    margin-top: auto;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    @include adaptiveValue("bottom", 30, 15);
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+//========================================================================================================================================================
+
+.service {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 20);
+
+    max-width: toRem(1040);
+  }
+
+  &__items {
+    display: grid;
+    column-gap: toRem(20);
+    row-gap: toRem(15);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(340), 1fr));
+  }
+
+  &__item {
+    border-radius: 20px;
+    background: #fff;
+
+    color: #2652cf;
+    font-weight: 600;
+
+    padding: toRem(50) toRem(20);
+
+    @media (max-width: $mobile) {
+      padding: toRem(35) toRem(20);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.wagons {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 20);
+
+    max-width: toRem(1040);
+  }
+
+  &__slider {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      top: 0;
+      background-color: #f0f3fc;
+      display: block;
+      z-index: 2;
+    }
+
+    &::before {
+      left: 100%;
+    }
+    &::after {
+      right: 100%;
+    }
+
+    @media (max-width: $pc) {
+      padding: 0 toRem(25);
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__navigation {
+    z-index: 3;
+
+    @media (min-width: $mobile) {
+      position: absolute;
+      width: calc(100% + toRem(50));
+      left: toRem(-25);
+      top: 50%;
+      transform: translateY(-50%);
+      justify-content: space-between;
+    }
+
+    @media (max-width: $pc) {
+      width: 100%;
+      left: 0;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__slide {
+    border-radius: 20px;
+    background: #fff;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    padding: toRem(30) toRem(25);
+    max-width: toRem(834);
+
+    @media (max-width: $mobile) {
+      padding: toRem(25) toRem(15) toRem(30);
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $mobile) {
+      flex: 0 0 percent(495, 1500);
+    }
+    @media (max-width: $mobile) {
+      max-width: toRem(495);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.readmore-block {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 30, 20);
+    @media (max-width: $mobile) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    @include adaptiveValue("column-gap", 40, 15, 0, 1230, 991);
+    row-gap: toRem(20);
+    @media (min-width: $mobile) {
+      grid-template-columns: percent(671, 1500) 1fr;
+    }
+  }
+
+  &__image-ibg {
+    height: fit-content;
+    border-radius: toRem(25);
+    overflow: hidden;
+    padding-bottom: percent(582, 671);
+  }
+
+  &__button {
+    width: 100%;
+    @include adaptiveValue("min-height", 66, 48);
+    margin-top: toRem(30);
+  }
+}

@@ -7,7 +7,7 @@
   align-items: center;
 
   border-radius: 20px;
-  background: #2652cf;
+  background-color: #2652cf;
 
   color: #fff;
   font-family: "Inter Tight";
@@ -25,10 +25,21 @@
   transition: all 0.3s ease 0s;
   @media (any-hover: hover) {
     &:hover {
-      background: hsla(224, 69%, 48%, 0.8);
+      background-color: rgba(38, 83, 207, 0.8);
     }
   }
   &--fw {
     width: 100%;
+  }
+
+  &_white {
+    background-color: #fff;
+    color: #011242;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
   }
 }

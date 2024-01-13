@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { Autoplay } from "swiper/modules"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -140,6 +140,73 @@ function initSliders() {
         //   },
         // },
       })
+    })
+  }
+  if (document.querySelector(".service-hero__slider")) {
+    new Swiper(".service-hero__slider", {
+      modules: [Autoplay, Pagination],
+      observer: true,
+      observeParents: true,
+      speed: 800,
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      lazyPreloaderClass: "preloader",
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: ".service-hero__slider .pagination",
+        clickable: true,
+      },
+
+      // breakpoints: {
+      //   320: {
+      //     slidesPerView: 2,
+      //     spaceBetween: 15,
+      //   },
+      //   600: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 15,
+      //   },
+      //   768: {
+      //     slidesPerView: 4,
+      //     spaceBetween: 20,
+      //   },
+      //   992: {
+
+      //   },
+      // },
+    })
+  }
+  if (document.querySelector(".wagons__slider")) {
+    new Swiper(".wagons__slider", {
+      modules: [Autoplay, Pagination, Navigation],
+      observer: true,
+      observeParents: true,
+      speed: 800,
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 25,
+
+      lazyPreloaderClass: "preloader",
+
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: ".wagons__pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        prevEl: ".wagons__slider .button-prev",
+        nextEl: ".wagons__slider .button-next",
+      },
     })
   }
 }

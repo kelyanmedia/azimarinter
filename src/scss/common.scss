@@ -1,4 +1,133 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.title {
+  color: #011242;
+  font-family: "Inter Tight";
+  @include adaptiveValue("font-size", 60, 26);
+  font-weight: 600;
+  line-height: 120%; /* 72px */
+
+  span {
+    color: #2652cf;
+  }
+
+  &_white {
+    color: #fff;
+  }
+}
+
+.subtitle {
+  color: #011242;
+  font-family: "Inter Tight";
+  @include adaptiveValue("font-size", 24, 22);
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+}
+
+.text {
+  font-family: "Inter Tight";
+  @include adaptiveValue("font-size", 24, 20);
+  font-weight: 400;
+  line-height: 130%; /* 31.2px */
+
+  span {
+    color: #2652cf;
+  }
+
+  &_white {
+    color: #fff;
+  }
+
+  p {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 15);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.pagination {
+  pointer-events: all;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: toRem(10);
+  row-gap: toRem(10);
+
+  &.pagination_blue {
+    .swiper-pagination-bullet {
+      background-color: #2652cf;
+      border-color: #2652cf;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: transparent;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    flex-shrink: 0;
+    cursor: pointer;
+    width: toRem(10);
+    height: toRem(10);
+
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #fff;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: toRem(-5);
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: transparent;
+  }
+}
+
+.navigation {
+  pointer-events: none;
+  display: flex;
+  gap: toRem(20);
+  &__button {
+    pointer-events: all;
+    width: toRem(24);
+    height: toRem(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("font-size", 22, 20);
+
+    color: #2652cf;
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #7250b4;
+      }
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: #2652cf;
+        }
+      }
+    }
+  }
+}
 
 //========================================================================================================================================================
 
