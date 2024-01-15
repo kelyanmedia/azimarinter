@@ -144,7 +144,7 @@ function initSliders() {
             speed: speed,
             loop: true,
             // loopAdditionalSlides: 3,
-            loopedSlides: 6,
+            // loopedSlides: 6,
             slidesPerView: "auto",
             spaceBetween: 10,
             autoplay: {
@@ -161,8 +161,8 @@ function initSliders() {
             speed: speed,
             loop: true,
             // loopAdditionalSlides: 3,
-            loopedSlides: 3,
-            slidesPerView: "auto",
+            // loopedSlides: 3,
+            slidesPerView: 2.5,
             spaceBetween: 10,
             autoplay: {
               delay: 0,
