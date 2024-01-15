@@ -145,6 +145,7 @@ body::after {
 
     padding: toRem(17);
     width: 100%;
+    max-width: toRem(423);
 
     transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
