@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules"
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -103,45 +103,105 @@ function initSliders() {
     })
   }
 
-  if (document.querySelector(".hero__slider")) {
-    let heroSliders = document.querySelectorAll(".hero__slider")
-    heroSliders.forEach(slider => {
-      let speed = slider.getAttribute("data-speed") ? slider.getAttribute("data-speed") : 2000
+  // if (document.querySelector(".hero__slider")) {
+  //   let heroSliders = document.querySelectorAll(".hero__slider")
+  //   heroSliders.forEach(slider => {
+  //     let speed = slider.getAttribute("data-speed") ? slider.getAttribute("data-speed") : 2000
 
-      new Swiper(slider, {
-        modules: [Autoplay],
-        observer: true,
-        observeParents: true,
-        direction: "vertical",
-        speed: speed,
-        loop: true,
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false,
-        },
+  //     new Swiper(slider, {
+  //       modules: [Autoplay],
+  //       observer: true,
+  //       observeParents: true,
+  //       direction: "vertical",
+  //       speed: speed,
+  //       loop: true,
+  //       slidesPerView: "auto",
+  //       spaceBetween: 10,
+  //       autoplay: {
+  //         delay: 0,
+  //         disableOnInteraction: false,
+  //       },
+  //     })
+  //   })
+  // }
 
-        // breakpoints: {
-        //   320: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 15,
-        //   },
-        //   600: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 15,
-        //   },
-        //   768: {
-        //     slidesPerView: 4,
-        //     spaceBetween: 20,
-        //   },
-        //   992: {
+  for (const mobileSlider of document.querySelectorAll(".hero__slider")) {
+    if (mobileSlider) {
+      let speed = mobileSlider.getAttribute("data-speed") ? mobileSlider.getAttribute("data-speed") : 1100
+      ;(function () {
+        "use strict"
 
-        //   },
-        // },
-      })
-    })
+        const breakpoint = window.matchMedia("(min-width:768px)")
+        let sliderPC
+        let sliderMOB
+
+        const enableSwiperPC = function () {
+          sliderPC = new Swiper(mobileSlider, {
+            modules: [Autoplay, FreeMode],
+            observer: true,
+            observeParents: true,
+            direction: "vertical",
+            speed: speed,
+            loop: true,
+            loopAdditionalSlides: 3,
+            slidesPerView: "auto",
+            spaceBetween: 10,
+
+            freeMode: {
+              enabled: true,
+              momentumBounce: true,
+            },
+
+            autoplay: {
+              delay: 0,
+              disableOnInteraction: false,
+            },
+          })
+        }
+        const enableSwiperMOB = function () {
+          sliderMOB = new Swiper(mobileSlider, {
+            modules: [Autoplay, FreeMode],
+            observer: true,
+            observeParents: true,
+            speed: speed,
+            loop: true,
+            loopAdditionalSlides: 3,
+            slidesPerView: "auto",
+            spaceBetween: 10,
+
+            freeMode: {
+              enabled: true,
+              momentumBounce: true,
+            },
+
+            autoplay: {
+              delay: 0,
+              disableOnInteraction: false,
+            },
+          })
+        }
+        console.log(mobileSlider)
+        const breakpointChecker = function () {
+          if (breakpoint.matches === true) {
+            if (sliderMOB !== undefined) {
+              sliderMOB.destroy(true, true)
+            }
+            return enableSwiperPC()
+          } else if (breakpoint.matches === false) {
+            console.log("2")
+            if (sliderPC !== undefined) {
+              sliderPC.destroy(true, true)
+            }
+            return enableSwiperMOB()
+          }
+        }
+
+        breakpoint.addListener(breakpointChecker)
+        breakpointChecker()
+      })()
+    }
   }
+
   if (document.querySelector(".service-hero__slider")) {
     new Swiper(".service-hero__slider", {
       modules: [Autoplay, Pagination],

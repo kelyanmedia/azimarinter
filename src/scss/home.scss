@@ -10,8 +10,13 @@
     border-radius: 30px;
     background: #fff;
 
+    @media (min-width: $mobile) {
+      overflow: hidden;
+    }
+
     @media (max-width: $mobile) {
       min-height: toRem(470);
+      padding-bottom: toRem(30);
     }
   }
 
@@ -58,6 +63,11 @@
     @include adaptiveValue("padding-right", 50, 15, 0, 1530, 767);
 
     min-height: toRem(600);
+
+    @media (max-width: $mobile) {
+      min-height: toRem(300);
+      padding-bottom: toRem(35);
+    }
   }
 
   &__sliders {
@@ -66,20 +76,31 @@
     display: flex;
     gap: toRem(10);
 
-    position: absolute;
-    width: percent(470, 1500);
-    height: 100%;
-    top: 0;
-    @include adaptiveValue("right", 50, 15, 0, 1530, 767);
-    z-index: 1;
-
     @media (max-width: $mobile) {
-      display: none;
+      // display: none;
+      flex-direction: column;
+      // margin: 0 toRem(-15);
+    }
+    @media (min-width: $mobile) {
+      position: absolute;
+      width: percent(470, 1500);
+      height: 100%;
+      top: 0;
+      @include adaptiveValue("right", 50, 15, 0, 1530, 767);
+      z-index: 1;
     }
   }
 
   &__slider {
-    width: calc(33% - 3.5px);
+    @media (min-width: $mobile) {
+      width: calc(33% - 3.5px);
+    }
+
+    @media (max-width: $mobile) {
+      &:first-child {
+        display: none;
+      }
+    }
   }
 
   &__wrapper {
@@ -91,6 +112,10 @@
     background: rgba(94, 125, 219, 0.3);
     border-radius: 20px;
     overflow: hidden;
+
+    @media (max-width: $mobile) {
+      max-width: toRem(150);
+    }
 
     img {
       max-width: 100%;
@@ -188,6 +213,10 @@
   &__items {
     display: grid;
     gap: toRem(20);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(4, 1fr);
+    }
     grid-template-columns: repeat(auto-fill, minmax(toRem(340), 1fr));
   }
 

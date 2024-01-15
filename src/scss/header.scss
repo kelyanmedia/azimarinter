@@ -90,7 +90,7 @@
 
       flex-direction: column;
 
-      padding: toRem(100) toRem(15) toRem(40);
+      padding: calc(var(--header-height) + toRem(25)) toRem(15) toRem(40);
 
       background-color: #f0f3fc;
       overflow: auto;
@@ -137,6 +137,16 @@
         }
         .menu__link::after {
           transform: rotate(180deg);
+        }
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          width: 100%;
+          height: toRem(20);
+          bottom: toRem(-20);
+          left: 0;
         }
       }
     }
@@ -200,21 +210,12 @@
       padding: toRem(20) toRem(15);
       transition: all 0.3s ease 0s;
       border-radius: toRem(10);
-
+      max-height: toRem(300);
+      overflow-y: auto;
       pointer-events: none;
       visibility: hidden;
       opacity: 0;
       z-index: 2;
-
-      &::before {
-        content: "";
-
-        position: absolute;
-        width: 100%;
-        height: toRem(20);
-        top: toRem(-20);
-        left: 0;
-      }
     }
 
     @media (max-width: $mobile) {
