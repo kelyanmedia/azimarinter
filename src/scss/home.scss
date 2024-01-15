@@ -17,6 +17,7 @@
     @media (max-width: $mobile) {
       min-height: toRem(470);
       padding-bottom: toRem(30);
+      margin: 0 toRem(-15);
     }
   }
 
