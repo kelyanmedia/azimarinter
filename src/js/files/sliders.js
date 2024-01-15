@@ -161,7 +161,7 @@ function initSliders() {
             speed: speed,
             loop: true,
             // loopAdditionalSlides: 3,
-            // loopedSlides: 3,
+            loopedSlides: 3,
             slidesPerView: 2.5,
             spaceBetween: 10,
             autoplay: {
