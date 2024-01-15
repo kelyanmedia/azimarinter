@@ -144,6 +144,7 @@ function initSliders() {
             speed: speed,
             loop: true,
             // loopAdditionalSlides: 3,
+            loopedSlides: 6,
             slidesPerView: "auto",
             spaceBetween: 10,
             autoplay: {
@@ -160,15 +161,39 @@ function initSliders() {
             speed: speed,
             loop: true,
             // loopAdditionalSlides: 3,
+            loopedSlides: 3,
             slidesPerView: "auto",
             spaceBetween: 10,
             autoplay: {
               delay: 0,
               disableOnInteraction: false,
             },
+
+            // breakpoints: {
+            //   320: {
+            //     slidesPerView: 2,
+            //     spaceBetween: 10,
+            //   },
+            //   460: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 10,
+            //   },
+            //   768: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 10,
+            //   },
+            //   992: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 10,
+            //   },
+            //   1268: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 10,
+            //   },
+            // },
           })
         }
-        console.log(mobileSlider)
+
         const breakpointChecker = function () {
           if (breakpoint.matches === true) {
             if (sliderMOB !== undefined) {
@@ -176,7 +201,6 @@ function initSliders() {
             }
             return enableSwiperPC()
           } else if (breakpoint.matches === false) {
-            console.log("2")
             if (sliderPC !== undefined) {
               sliderPC.destroy(true, true)
             }
