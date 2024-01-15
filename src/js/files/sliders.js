@@ -143,7 +143,7 @@ function initSliders() {
             direction: "vertical",
             speed: speed,
             loop: true,
-            loopAdditionalSlides: 3,
+            // loopAdditionalSlides: 3,
             slidesPerView: "auto",
             spaceBetween: 10,
             autoplay: {
@@ -159,7 +159,7 @@ function initSliders() {
             observeParents: true,
             speed: speed,
             loop: true,
-            loopAdditionalSlides: 3,
+            // loopAdditionalSlides: 3,
             slidesPerView: "auto",
             spaceBetween: 10,
             autoplay: {
