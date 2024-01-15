@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -137,7 +137,7 @@ function initSliders() {
 
         const enableSwiperPC = function () {
           sliderPC = new Swiper(mobileSlider, {
-            modules: [Autoplay, FreeMode],
+            modules: [Autoplay],
             observer: true,
             observeParents: true,
             direction: "vertical",
@@ -146,12 +146,6 @@ function initSliders() {
             loopAdditionalSlides: 3,
             slidesPerView: "auto",
             spaceBetween: 10,
-
-            freeMode: {
-              enabled: true,
-              momentumBounce: true,
-            },
-
             autoplay: {
               delay: 0,
               disableOnInteraction: false,
@@ -160,7 +154,7 @@ function initSliders() {
         }
         const enableSwiperMOB = function () {
           sliderMOB = new Swiper(mobileSlider, {
-            modules: [Autoplay, FreeMode],
+            modules: [Autoplay],
             observer: true,
             observeParents: true,
             speed: speed,
@@ -168,12 +162,6 @@ function initSliders() {
             loopAdditionalSlides: 3,
             slidesPerView: "auto",
             spaceBetween: 10,
-
-            freeMode: {
-              enabled: true,
-              momentumBounce: true,
-            },
-
             autoplay: {
               delay: 0,
               disableOnInteraction: false,
