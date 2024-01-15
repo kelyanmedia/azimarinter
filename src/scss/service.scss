@@ -281,3 +281,234 @@
     margin-top: toRem(30);
   }
 }
+
+//========================================================================================================================================================
+
+.car-delivery {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 30);
+    max-width: toRem(1040);
+  }
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__items {
+    display: grid;
+    gap: toRem(20);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    border-radius: 20px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: em(600)) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    @include adaptiveValue("padding-top", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-bottom", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-left", 25, 15, 0, 1530, 991);
+    @include adaptiveValue("padding-right", 25, 15, 0, 1530, 991);
+  }
+
+  &__image {
+    flex: 0 0 percent(300, 740);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: em(600)) {
+      max-width: toRem(300);
+
+      margin-left: auto;
+      //   margin-right: auto;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.air-freight {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 30);
+    max-width: toRem(1040);
+  }
+
+  &__items {
+    display: grid;
+    column-gap: toRem(20);
+    row-gap: toRem(20);
+
+    @media (min-width: $mobile) {
+      row-gap: toRem(15);
+      grid-template-columns: repeat(auto-fill, minmax(toRem(400), 1fr));
+    }
+  }
+
+  &__text {
+    border-radius: 20px;
+    background: #fff;
+
+    @include adaptiveValue("font-size", 39, 22);
+    font-weight: 400;
+    line-height: 120%; /* 46.8px */
+
+    @include adaptiveValue("padding", 50, 25, 0, 1530, 767);
+
+    @media (min-width: $mobile) {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: $pc) {
+      min-height: toRem(243);
+    }
+  }
+}
+
+//========================================================================================================================================================
+.intermodal {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 30);
+    max-width: toRem(1040);
+  }
+
+  &__items {
+    display: grid;
+    gap: toRem(20);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(340), 1fr));
+  }
+
+  &__item {
+    border-radius: 20px;
+    background: #fff;
+
+    padding: toRem(30) toRem(25);
+
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+
+    @media (max-width: $tablet) {
+      padding: toRem(25) toRem(15);
+    }
+  }
+
+  &__ico {
+    @include adaptiveValue("width", 70, 50);
+    @include adaptiveValue("height", 70, 50);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    color: #2652cf;
+  }
+}
+
+//========================================================================================================================================================
+
+.price {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 30);
+    max-width: toRem(1040);
+  }
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__items {
+  }
+
+  &__item {
+    @include adaptiveValue("padding-top", 70, 25, 0, 1530, 767);
+    @include adaptiveValue("padding-bottom", 70, 25, 0, 1530, 767);
+    border-bottom: 1px solid rgba(38, 83, 207, 0.4);
+
+    &:first-child {
+      border-top: 1px solid rgba(38, 83, 207, 0.4);
+    }
+
+    color: #000;
+    font-family: Inter Tight;
+    @include adaptiveValue("font-size", 39, 20);
+    font-weight: 400;
+    line-height: 120%; /* 46.8px */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    row-gap: toRem(20);
+    column-gap: toRem(50);
+
+    span {
+      &:first-child {
+        max-width: toRem(957);
+      }
+      &:last-child {
+        @media (max-width: em(1150)) {
+          font-weight: 600;
+        }
+      }
+    }
+
+    @media (max-width: em(1150)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &.mark {
+      color: rgba(1, 18, 66, 0.5);
+    }
+  }
+}
+
+//========================================================================================================================================================

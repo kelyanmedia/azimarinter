@@ -154,6 +154,8 @@ body {
 // Підключення стилів окремих сторінок
 @import "home";
 @import "service";
+@import "about";
+@import "blog";
 
 .page {
   padding-top: var(--header-height);

@@ -1,0 +1,156 @@
+.top-page {
+  @include adaptiveValue("padding-bottom", 50, 35);
+  &__container {
+  }
+
+  &__body {
+    @include adaptiveValue("padding-top", 80, 50, 0, 1530, 991);
+    @include adaptiveValue("padding-bottom", 80, 50, 0, 1530, 991);
+    @include adaptiveValue("padding-left", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-right", 50, 15, 0, 1530, 767);
+    border-radius: 30px;
+    background: #fff;
+  }
+
+  &__title {
+    color: #011242;
+    @include adaptiveValue("font-size", 100, 40);
+    font-weight: 600;
+    line-height: 100%; /* 100px */
+  }
+}
+.about {
+  @include adaptiveValue("padding-top", 50, 35);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    row-gap: toRem(25);
+    @include adaptiveValue("column-gap", 60, 20, 0, 1530, 991);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+  }
+
+  &__text {
+    max-width: toRem(797);
+  }
+
+  &__image-ibg {
+    border-radius: 20px;
+    overflow: hidden;
+
+    height: fit-content;
+    padding-bottom: percent(583, 1500);
+
+    @media (min-width: $tablet) {
+      flex: 0 0 percent(633, 1500);
+    }
+
+    @media (max-width: $tablet) {
+      max-width: toRem(650);
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      padding-bottom: percent(700, 991);
+    }
+    @media (max-width: em(730)) {
+      padding-bottom: percent(330, 345);
+    }
+  }
+}
+.text {
+}
+
+//========================================================================================================================================================
+
+.team {
+  @include adaptiveValue("padding-top", 80, 35);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    row-gap: toRem(25);
+    @include adaptiveValue("column-gap", 50, 20, 0, 1530, 991);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+  }
+
+  &__text {
+    max-width: toRem(797);
+  }
+
+  &__image-ibg {
+    border-radius: 20px;
+    overflow: hidden;
+
+    height: fit-content;
+    padding-bottom: percent(583, 1500);
+
+    @media (min-width: $tablet) {
+      flex: 0 0 percent(829, 1500);
+    }
+
+    @media (max-width: $tablet) {
+      max-width: toRem(650);
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      padding-bottom: percent(500, 991);
+    }
+    @media (max-width: em(500)) {
+      padding-bottom: percent(240, 345);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.project {
+  @include adaptiveValue("padding-top", 80, 35);
+  @include adaptiveValue("padding-bottom", 80, 40);
+  &__container {
+  }
+
+  &__items {
+    display: grid;
+    column-gap: toRem(40);
+    row-gap: toRem(20);
+    @media (min-width: $mobile) {
+      row-gap: toRem(40);
+      grid-template-columns: repeat(auto-fill, minmax(toRem(500), 1fr));
+    }
+  }
+
+  &__image-ibg {
+    border-radius: 30px;
+    overflow: hidden;
+
+    padding-bottom: percent(600, 730);
+  }
+}

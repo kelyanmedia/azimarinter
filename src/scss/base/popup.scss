@@ -1,61 +1,156 @@
 body::after {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
-	z-index: 149;
+  content: "";
+  //   background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(240, 243, 252, 0.8);
+
+  filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
 }
 .popup-show body::after {
-	opacity: 1;
+  opacity: 1;
 }
 .popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
 }
 .popup_show {
-	z-index: 150;
-	visibility: visible;
-	overflow: auto;
-	pointer-events: auto;
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
 }
 .popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
+  visibility: visible;
+  transform: scale(1);
 }
 .popup__wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
-	}
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  border-radius: 15px;
+  background: #fff;
+  //   padding: 20px;
+  width: 100%;
+  max-width: toRem(580);
+  position: relative;
+  .lock & {
+    visibility: visible;
+  }
+}
+
+//========================================================================================================================================================
+
+.popup {
+  &__wrapper {
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    @include adaptiveValue("padding-top", 67, 35, 0, 1530, 991);
+    @include adaptiveValue("padding-bottom", 67, 35, 0, 1530, 767);
+    @include adaptiveValue("padding-left", 62, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-right", 62, 15, 0, 1530, 767);
+  }
+
+  &__close {
+    position: absolute;
+
+    top: toRem(20);
+
+    right: toRem(20);
+    width: toRem(25);
+    height: toRem(25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: toRem(25);
+    color: #7e7e7e;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  &__ico {
+    @include adaptiveValue("font-size", 77, 50);
+    color: #2652cf;
+
+    @include adaptiveValue("margin-bottom", 40, 30);
+  }
+
+  &__title {
+    color: #1e1e1e;
+    text-align: center;
+    @include adaptiveValue("font-size", 39, 24);
+    line-height: 120%; /* 46.8px */
+
+    margin-bottom: toRem(20);
+  }
+
+  &__text {
+    color: #7e7e7e;
+    text-align: center;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 130%; /* 31.2px */
+
+    margin-bottom: toRem(30);
+  }
+
+  &__button {
+    color: #fff;
+    @include adaptiveValue("font-size", 24, 20);
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border-radius: 40px;
+    background: #2652cf;
+
+    padding: toRem(17);
+    width: 100%;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background: rgba(38, 83, 207, 0.8);
+      }
+    }
+  }
 }

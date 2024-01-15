@@ -314,6 +314,22 @@
     @media (min-width: $mobile) {
       grid-template-columns: repeat(auto-fill, minmax(toRem(600), 1fr));
     }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__button {
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #2652cf;
+      }
+    }
   }
 
   &__item {
@@ -352,6 +368,26 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  &__item-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include adaptiveValue("padding-left", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-right", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-bottom", 50, 15, 0, 1530, 767);
+    @include adaptiveValue("padding-top", 50, 15, 0, 1530, 767);
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: #fff;
+    @include adaptiveValue("font-size", 39, 20);
+    font-weight: 600;
+    line-height: 120%; /* 46.8px */
   }
 }
 

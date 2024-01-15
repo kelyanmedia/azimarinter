@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="top-page">
+                <div class="top-page__container">
+                    <div class="top-page__body">
+                        <h1 class="top-page__title">Наши проекты</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project">
+                <div class="project__container">
+                    <div class="project__items">
+                        <div class="project__image-ibg"><img src="@img/project/01.jpg" alt="" loading="lazy"></div>
+                        <div class="project__image-ibg"><img src="@img/project/02.jpg" alt="" loading="lazy"></div>
+                        <div class="project__image-ibg"><img src="@img/project/03.jpg" alt="" loading="lazy"></div>
+                        <div class="project__image-ibg"><img src="@img/project/04.jpg" alt="" loading="lazy"></div>
+                        <div class="project__image-ibg"><img src="@img/project/05.jpg" alt="" loading="lazy"></div>
+                        <div class="project__image-ibg"><img src="@img/project/06.jpg" alt="" loading="lazy"></div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            @@include('html/_contact_blue.htm',{})
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

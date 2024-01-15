@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="service-hero">
+                <div class="service-hero__container">
+                    <div class="service-hero__slider swiper">
+                        <div class="service-hero__wrapper swiper-wrapper">
+                            <div class="service-hero__slide swiper-slide">
+                                <div class="service-hero__image-ibg">
+                                    <img src="@img/service/02.jpg" alt="" loading="lazy">
+                                    <div class="preloader"></div>
+                                </div>
+                                <div class="service-hero__content">
+                                    <h2 class="service-hero__title">Контейнерные <br> грузоперевозки</h2>
+                                    <div class="service-hero__text">
+                                        <p>Из любой точки мира</p>
+                                    </div>
+                                    <button class="service-hero__button button">Просчитать груз</button>
+                                </div>
+                            </div>
+                            <div class="service-hero__slide swiper-slide">
+                                <div class="service-hero__image-ibg">
+                                    <img src="@img/service/02.jpg" alt="" loading="lazy">
+                                    <div class="preloader"></div>
+                                </div>
+                                <div class="service-hero__content">
+                                    <h2 class="service-hero__title">Контейнерные <br> грузоперевозки</h2>
+                                    <div class="service-hero__text">
+                                        <p>Из любой точки мира</p>
+                                    </div>
+                                    <button class="service-hero__button button">Просчитать груз</button>
+                                </div>
+                            </div>
+                            <div class="service-hero__slide swiper-slide">
+                                <div class="service-hero__image-ibg">
+                                    <img src="@img/service/04.jpg" alt="" loading="lazy">
+                                    <div class="preloader"></div>
+                                </div>
+                                <div class="service-hero__content">
+                                    <h2 class="service-hero__title">Авиаперевозки</h2>
+                                    <div class="service-hero__text">
+                                        <p>Доставим ваш груз быстро и безопасно</p>
+                                    </div>
+                                    <button class="service-hero__button button">Просчитать груз</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-hero__pagination pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="text-block">
+                <div class="text-block__container">
+                    <div class="text-block__body">
+                        <h2 class="text-block__title title">Безопасная и эффективная доставка контейнерных <br> грузов <span>по всему миру.</span></h2>
+                        <div class="text-block__text text">
+                            <p>Наша команда специалистов готова взять на себя всю организацию и координацию грузоперевозок. </p>
+                            <p>Мы ценим ваше время и ресурсы, поэтому наша цель - обеспечить вам максимальный комфорт и уверенность в сохранности ваших грузов.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="readmore-block">
+                <div class="readmore-block__container">
+                    <div class="readmore-block__body">
+                        <div class="readmore-block__image-ibg"><img src="@img/readmore/02.jpg" alt=""></div>
+                        <div data-showmore="items" class="readmore">
+                            <div data-showmore-content="4" class="readmore__content text">
+                                <p>Мы предлагаем высококачественные и надежные логистические решения для вашего груза, обеспечивая безопасную и эффективную доставку контейнерных грузов по всему миру.</p>
+
+                                <p>Наш опыт и профессионализм позволяют нам предоставлять широкий спектр услуг, включая морские, авиационные и наземные контейнерные грузоперевозки. Мы сотрудничаем с ведущими перевозчиками и компаниями-партнерами, чтобы обеспечить вам глобальное покрытие и оптимальные логистические решения для ваших потребностей.</p>
+
+                                <p>Наша компания гарантирует высокий уровень обслуживания, персонализированный подход к каждому клиенту и прозрачные условия сотрудничества. Доверьте нам свои контейнерные грузы, и мы обеспечим их безопасную и эффективную доставку в любую точку мира.</p>
+                                <p>Мы предлагаем высококачественные и надежные логистические решения для вашего груза, обеспечивая безопасную и эффективную доставку контейнерных грузов по всему миру.</p>
+
+                                <p>Наш опыт и профессионализм позволяют нам предоставлять широкий спектр услуг, включая морские, авиационные и наземные контейнерные грузоперевозки. Мы сотрудничаем с ведущими перевозчиками и компаниями-партнерами, чтобы обеспечить вам глобальное покрытие и оптимальные логистические решения для ваших потребностей.</p>
+
+                                <p>Наша компания гарантирует высокий уровень обслуживания, персонализированный подход к каждому клиенту и прозрачные условия сотрудничества. Доверьте нам свои контейнерные грузы, и мы обеспечим их безопасную и эффективную доставку в любую точку мира.</p>
+
+
+                            </div>
+                            <button hidden data-showmore-button type="button" class="readmore__more"><span>Читать дальше</span><span>Скрыть</span></button>
+                        </div>
+                    </div>
+            </section>
+
+            @@include('html/_contact_blue.htm',{})
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

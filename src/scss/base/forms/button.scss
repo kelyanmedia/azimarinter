@@ -42,4 +42,17 @@
       }
     }
   }
+
+  &_light {
+    color: #011242;
+    background: rgba(94, 125, 219, 0.3);
+    width: 100%;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #2652cf;
+      }
+    }
+  }
 }
