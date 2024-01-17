@@ -99,6 +99,16 @@
 
     @media (max-width: $mobile) {
       &:first-child {
+        // display: none;
+      }
+      display: none;
+    }
+
+    &_mob {
+      @media (max-width: $mobile) {
+        display: block;
+      }
+      @media (min-width: $mobile) {
         display: none;
       }
     }
