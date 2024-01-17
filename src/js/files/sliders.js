@@ -127,7 +127,7 @@ function initSliders() {
 
   for (const mobileSlider of document.querySelectorAll(".hero__slider")) {
     if (mobileSlider) {
-      let speed = mobileSlider.getAttribute("data-speed") ? mobileSlider.getAttribute("data-speed") : 3100
+      let speed = mobileSlider.getAttribute("data-speed") ? mobileSlider.getAttribute("data-speed") : 4300
       ;(function () {
         "use strict"
 
